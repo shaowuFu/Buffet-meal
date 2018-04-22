@@ -23,6 +23,7 @@
   font-size: 20rpx;
   background: white;
   margin: auto;
+  text-decoration: underline;
 }
 
 button::after {

@@ -98,7 +98,7 @@ Page({
             success: function(res) {
               let name = res.userInfo.nickName;
               app.globalData.loginName = name;
-              wx.navigateTo({
+              wx.redirectTo({
                 url: '../home/home?name='+name,
               });
               wx.showToast({
@@ -107,7 +107,7 @@ Page({
             }
           })
         } else {
-          wx.navigateTo({
+          wx.redirectTo({
             url: '../home/home',
           })
         }
