@@ -1,0 +1,20 @@
+/* pages/foodDetail/foodDateil.wxss */
+.add-price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200rpx;
+  border-top: 1px solid #A52A2A;
+  border-bottom: 1px solid #A52A2A;
+  margin-top: 20rpx;
+}
+
+.image-add {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.text-price {
+  color: #A52A2A;
+  font-size: 36rpx;
+}

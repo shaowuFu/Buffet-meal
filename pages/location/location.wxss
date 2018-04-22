@@ -1,0 +1,98 @@
+.header-city {
+  display: flex;
+  align-items: center;
+  height: 100rpx;
+}
+
+.button-city {
+  background-color: white;
+  font-size: 24rpx;
+  margin-left: 20rpx;
+}
+
+.search-restaurant {
+  border: 1px solid blue;
+  border-radius: 10rpx 10rpx 10rpx 10rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  width: 500rpx;
+  display: flex;
+}
+
+.input-placeholder {
+  font-size: 24rpx;
+}
+.text {
+  font-size: 20rpx;
+}
+
+.text-login {
+  display: flex;
+  height: 50rpx;
+  align-items: center;
+  justify-content: center;
+  background-color: #E8E8E8;
+}
+
+.go-login {
+  position: absolute;
+  color: #A52A2A;
+  text-decoration: underline;
+  margin-left: 652rpx;
+  margin-top: -36rpx;
+}
+
+.city-select {
+  height: 1160rpx;
+  position: flex;
+  margin: 20rpx 20rpx 20rpx 20rpx;
+  border: 1px solid blue;
+  background-color: white;
+}
+
+
+.img-close {
+  position: absolute;
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+}
+
+.city-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90rpx;
+  color: #A52A2A;
+  font-weight: bolder;
+}
+
+.search-city {
+  border: 1px solid #B0B0B0;
+  border-radius: 10rpx 10rpx 10rpx 10rpx;
+  width: 90%;
+  display: flex;
+}
+
+.city-gps {
+  display: flex;
+  align-items: center;
+  height: 50rpx;
+}
+.city-gps text {
+  margin-left: 32rpx;
+  font-size: 24rpx;
+}
+
+.go-menu-button {
+  background-color: #A52A2A;
+  width: 100%;
+  color: white;
+  margin-top: 80%;
+}
+
+.map {
+  left: 50%;
+  transform: translateX(-50%);
+}

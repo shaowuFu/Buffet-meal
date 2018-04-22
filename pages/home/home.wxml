@@ -1,0 +1,35 @@
+<view class='item-header'>
+  <text class='item-text'>登录后，订单完成后可自动积累K金</text>
+  <view class='item-login'>
+    <button wx:if="{{isLogin}}" catchtap='register' class='item-reg'>注册|登录</button>
+    <view wx:if="{{!isLogin}}" class='item-reg' catchtap='exit'>
+      <text style='color: #A52A2A;font-size: 14rpx'>欢迎{{name}}登录</text>
+    </view>
+    <navigator url="../menu/menu" class='item-help'>@</navigator>
+  </view>
+</view>
+<swiper class='item-swiper' autoplay='true' interval="3000">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src='{{item}}' class='item-image'></image>
+    </swiper-item>
+  </block>
+</swiper>
+<button class='item-button' bindtap='enterLocation'>开始点餐</button>
+<view>
+  <view class='item' catchtap='goCard'>
+    <image src='../../images/icon/card.svg' class='item-image-card'></image>
+    <text class='item-text-title'>我的卡包</text>
+    <text class='item-text-direction' decode="true">更多优惠券&nbsp;&nbsp;&nbsp;>></text>
+  </view>
+  <view class='item' catchtap='goOrder'>
+    <image src='../../images/icon/orders.svg' class='item-image-card'></image>
+    <text class='item-text-title'>我的订单</text>
+    <text decode="true" class='item-text-direction'>&nbsp;&nbsp;&nbsp;查看订单&nbsp;&nbsp;&nbsp;>></text>
+  </view>
+  <view class='item' catchtap='goShopping'>
+    <image src='../../images/icon/store.svg' class='item-image-card'></image>
+    <text class='item-text-title'>K金商城</text>
+    <text decode="true" class='item-text-direction'>&nbsp;&nbsp;&nbsp;更多产品&nbsp;&nbsp;&nbsp;>></text>
+  </view>
+</view>

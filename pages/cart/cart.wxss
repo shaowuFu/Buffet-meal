@@ -1,0 +1,64 @@
+/* pages/crat/cart.wxss */
+
+.order {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  height: 80rpx;
+}
+
+.order-name {
+  flex: 3;
+}
+
+.order-price {
+  flex: 1;
+}
+
+.order-number {
+  flex: 1;
+}
+
+.order-size {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.order-icon {
+  display: flex;
+  flex: 2;
+}
+
+.order-text {
+  color: #a52a2a;
+  font-size: 26rpx;
+}
+
+.order-remove {
+  margin-top: 15rpx;
+}
+
+.order-add {
+  margin-top: 15rpx;
+}
+
+.commit-view {
+  text-align: right;
+  display: flex;
+  justify-content: center;
+  height: 200rpx;
+  align-items: center;
+}
+.commit-order {
+  font-size: 36rpx;
+  color: #a52a2a;
+}
+.commit-price {
+  font-size: 36rpx;
+  color: #a52a2a;
+}
+.commit {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}

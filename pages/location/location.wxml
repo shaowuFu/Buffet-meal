@@ -1,0 +1,72 @@
+<view wx:if="{{isHidden}}" style='height: 900rpx;'>
+  <view class='header-city'>
+    <button class='button-city' bindtap='cityselect'>{{city}}</button>
+    <view class='search-restaurant'>
+      <image src='../../images/icon/search.svg' style='width: 50rpx;height: 50rpx;'></image>
+      <input type='text' confirm-type='search' placeholder="搜索餐厅" placeholder-class="input-placeholder" style='font-size: 24rpx;' />
+    </view>
+  </view>
+  <view wx:if="{{isLogin}}">
+    <view class='text-login'>
+      <text class='text'>登录后享受会员优惠价，并自动积累K金</text>
+    </view>
+    <text class='go-login text' catchtap='goLogin'>去登录</text>
+  </view>
+  <view style='height: 30rpx; background-color: #F8F8F8'></view>
+  <view wx:if="{{!isLogin}}">
+    <view class='text-login'>
+      <text class='text'>欢迎{{name}}登录</text>
+    </view>
+  </view>
+  <view style='height: 30rpx; background-color: #F8F8F8'></view>
+  <view>
+    <map class='map' longitude='{{map.longitude}}' latitude='{{map.latitude}}' markers='{{map.markers}}'></map>
+  </view>
+  <view>
+    <button class='go-menu-button' catchtap='goMenu'>进入菜单</button>
+  </view>
+</view>
+
+<view class='city-select' wx:if="{{!isHidden}}">
+  <image src='../../images/icon/close.svg' class='img-close' catchtap='closeCity'></image>
+  <view class='city-list'>
+    <text>城市列表</text>
+  </view>
+  <view style='display:flex;justify-content:center;'>
+    <view class='search-city'>
+      <image src='../../images/icon/search.svg' style='width: 50rpx;height: 50rpx;'></image>
+      <input type='text' confirm-type='search' placeholder="输入城市名或首字母查询" placeholder-class="input-placeholder" style='font-size: 24rpx;' bindinput='searchCity' />
+    </view>
+  </view>
+  <view wx:if="{{!isFilter}}">
+    <scroll-view scroll-y="true" style='height: {{winHeight*2}}rpx; width: 90%; margin: auto;' scroll-into-view="{{showLetter}}">
+      <view wx:for="{{citys}}" wx:for-item="filterCity" data-city='{{filterCity}}' catchtap='selectCity'>
+        {{filterCity}}
+      </view>
+    </scroll-view>
+  </view>
+  <view wx:if="{{isFilter}}">
+    <view class='city-gps'>
+      <text decode="true">{{city}}&nbsp;&nbsp;GPS定位</text>
+    </view>
+    <view style='display: flex'>
+      <scroll-view scroll-y="true" style='height: {{winHeight*2}}rpx' scroll-into-view="{{showLetter}}">
+        <view wx:for="{{cityList}}" id='{{item.initial}}'>
+          <!-- <view>
+          <text style='display:block'>国内热门城市</text>
+          <view>
+            <view class="kuai" data-text="北京" bindtap="selectCity">北京</view>
+            <view class="kuai" data-text="上海" bindtap="selectCity">上海</view>
+          </view>
+        </view>-->
+          <view>{{item.initial}}</view>
+          <view wx:for="{{item.cityInfo}}" wx:for-item="ct" data-city="{{ct.city}}" bindtap='selectCity'>{{ct.city}}</view>
+        </view>
+      </scroll-view>
+      <view style='text-align: right;background-color:#E8E8E8'>
+        <view wx:for="{{searchLetter}}" style='height: {{itemH *2}}rpx' data-letter="{{item.name}}" catchtouchstart='searchLetterStart' catchtouchmove='searchLetterMove' catchtouchend='searchLetterEnd'>{{item.name}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

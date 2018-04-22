@@ -1,0 +1,15 @@
+<!--pages/foodDetail/foodDateil.wxml-->
+<view>
+  <view style='display:flex; justify-content:center;align-items:center;margin: 20rpx 0 20rpx;'>
+    <image src='{{imgUrl}}'></image>
+  </view>
+  <view>
+    <text style='margin-left:20rpx'>{{description}}</text>
+  </view>
+  <view class='add-price'>
+    <text class='text-price'>{{price}}</text>
+    <view style='margin-left: 70%;' catchtap='addPrice'>
+      <image src='../../images/icon/add.svg' class='image-add'></image>
+    </view>
+  </view>
+</view>

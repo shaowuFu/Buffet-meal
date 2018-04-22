@@ -1,0 +1,26 @@
+/* pages/register/register.wxss */
+.image-phone {
+  border: 1px solid #D8D8D8;
+  height: 2.4rem;
+  width: 15%;
+  margin: auto;
+  margin-top: 20rpx;
+  margin-right: 0rpx;
+}
+
+.input-phone {
+  border: 1px solid #D8D8D8;
+  height: 2.4rem;
+  width: 75%;
+  margin: auto;
+  margin-top: 20rpx;
+  margin-left: 0rpx;
+}
+
+.radio-sex {
+  display: flex;
+  align-items: center;
+  height: 160rpx;
+  margin-left: 32rpx;
+  color: #A52A2A;
+}

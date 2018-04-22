@@ -1,0 +1,31 @@
+<!--pages/crat/cart.wxml-->
+<view>
+  <text class='order-text'>您的订单如下：</text>
+</view>
+<view wx:for="{{orders}}" wx:for-item="order" class='order'>
+  <view class='order-name'>
+    <text class='order-text'>{{order.name}}</text>
+  </view>
+  <view class='order-price'>
+    <text class='order-text'>{{order.price}}</text>
+  </view>
+  <view class='order-number'>
+    <text class='order-text'>{{order.number}}</text>
+  </view>
+  <view class='order-icon'>
+    <view class='order-remove'>
+      <image src='../../images/icon/remove.svg' class='order-size'></image>
+    </view>
+    <view class=' order-add'>
+      <image src='../../images/icon/add.svg' class='order-size'></image>
+    </view>
+  </view>
+</view>
+<view class='commit-view'>
+  <view class='commit'>
+    <text class='commit-price'>总价格: ￥{{allPrice}}</text>
+  </view>
+  <view class='commit'>
+    <button class='commit-order' catchtap='commitOrder'>提交订单</button>
+  </view>
+</view>

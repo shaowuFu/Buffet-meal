@@ -1,0 +1,32 @@
+<!--pages/register/register.wxml-->
+<view>
+  <view style='display: flex'>
+    <image src='../../images/icon/phone.svg' class='image-phone' />
+    <input class='input-phone' placeholder='手机号' type='number' />
+  </view>
+  <view style='display: flex'>
+    <image src='../../images/icon/lock.svg' class='image-phone' />
+    <input class='input-phone' placeholder='请输入验证码' type='number' />
+  </view>
+  <view style='display: flex'>
+    <image src='../../images/icon/lock.svg' class='image-phone' />
+    <input class='input-phone' password='true' placeholder='设置您的账号密码' type='number' />
+  </view>
+  <view style='display: flex'>
+    <image src='../../images/icon/map.svg' class='image-phone' />
+    <input class='input-phone' placeholder='请选择城市' type='number' />
+  </view>
+  <view style='display: flex'>
+    <image src='../../images/icon/user-register.svg' class='image-phone' />
+    <sele class='input-phone' placeholder='请输入您的昵称' type='number' />
+  </view>
+  <view class='radio-sex'>
+    <text>性别:</text>
+    <radio-group>
+      <radio id='male' value="male" color='#A52A2A' style='margin-left:60rpx;'></radio>
+      <label for="male" style='margin-left:10rpx;'>男</label>
+      <radio id='female' value="female" color='#A52A2A' style='margin-left:60rpx;'></radio>
+      <label for="female" style='margin-left:10rpx;'>女</label>
+    </radio-group>
+  </view>
+</view>

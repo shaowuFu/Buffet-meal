@@ -1,0 +1,19 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/location/location",
+    "pages/login/login",
+    "pages/register/register",
+    "pages/menu/menu",
+    "pages/foodDetail/foodDetail",
+    "pages/cart/cart"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "肯德基自助点餐",
+    "navigationBarTextStyle": "white"
+  }
+}

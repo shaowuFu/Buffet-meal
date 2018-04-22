@@ -1,0 +1,97 @@
+/* pages/menu/menu.wxss */
+
+.item-image {
+  width: 100%;
+  height: 300rpx;
+  flex-direction: 
+}
+
+.food-image {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.menu-scroll {
+  width: 150rpx;
+  align-items: center;  
+}
+
+.menu-left-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* height: 900rpx; */
+}
+
+.menu-right-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  /* height: 900rpx; */
+}
+
+.image-add {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.food-icon {
+  text-align: left;
+  align-items: center;
+  display: flex;
+  height: 200rpx;
+}
+.food-right-np {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.menu-icon {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.food-img {
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.meun-text {
+  font-size: 20rpx;
+  display: block;
+  text-align: center; 
+}
+.food-name {
+  margin-top: -60rpx;
+}
+.food-pirce {
+  margin-top: 10rpx;
+}
+
+.food-pirce-text {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #A52A2A;
+}
+
+.food-line {
+  border: 1rpx solid #A52A2A;
+  align-self: flex-end;
+  width: 100%;
+  position: absolute;
+}
+
+.icon-cart {
+  width: 80rpx;
+  height: 80rpx;
+  margin-left: 20rpx;
+
+}
+
+.cart {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20rpx;
+}

@@ -1,0 +1,23 @@
+<!--pages/login/login.wxml-->
+<view wx:if="{{isPhone}}">
+  <image class='icon-user' src='../../images/icon/user.svg'></image>
+  <view class='text-toastr'>
+    <text>登录完成后，您的订单将自动积累K金</text>
+  </view>
+  <view style='display: flex'>
+    <image src='../../images/icon/phone.svg' class='image-phone' />
+    <input class='input-phone' placeholder='请输入手机号' type='number' bindblur="getPhone"/>
+  </view>
+  <block wx:if="{{isCode}}">
+    <view style='display: flex'>
+      <image src='../../images/icon/lock.svg' class='image-phone' />
+      <input class='input-phone' placeholder='请输入短信验证码' type='number' bindblur='getPassword' />
+    </view>
+    <view>
+      <button class='button-register' catchtap='loginConfig' disabled='{{isConfrim}}'>确认</button>
+    </view>
+  </block>
+  <view wx:if="{{!isCode}}">
+    <button class='button-register' catchtap='showCode' disabled='{{isDisable}}'>登录并绑定微信号</button>
+  </view>
+</view>

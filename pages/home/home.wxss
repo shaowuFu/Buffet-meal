@@ -1,0 +1,79 @@
+/* pages/home/home.wxss */
+.item-header {
+  display: flex;
+  height:80rpx;
+  align-items: center;
+}
+
+.item-text {
+  flex: 2;
+  font-size: 26rpx; 
+  padding-left: 16rpx;
+}
+
+.item-login {
+  display: flex;
+  font-size: 26rpx;
+  width: 232rpx;
+}
+
+.item-reg {
+  width: 130rpx;
+  padding-right: 16rpx;
+  font-size: 20rpx;
+  background: white;
+  margin: auto;
+}
+
+button::after {
+  border: none;
+}
+
+.item-help {
+  margin: 0 10rpx 0 0;
+  padding-right: 16rpx;
+}
+
+.item-image {
+  width: 100%;
+  height:300rpx;
+}
+
+.item-button {
+  margin-top: 35rpx;
+  background-color: #A52A2A;
+  width: 650rpx;
+  color: white;
+}
+
+.item-icon {
+  background-image: url('../../images/icon/card.png');
+}
+
+.item-image-card {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+/* .item-list {
+  margin: 50rpx 0rpx 0rpx;
+} */
+
+.item {
+  display: flex;
+  border-bottom: 1px solid #D8D8D8;
+  padding-left: 100rpx;
+  height: 120rpx;
+  align-items: center;
+}
+.item-text-title {
+  margin-left: 10rpx;
+  font-size: 20rpx;
+  font-weight: bolder;
+}
+.item-text-direction {
+  font-size: 20rpx;
+  color: #D8D8D8;
+  align-self: flex-end;
+  margin: auto 0rpx auto 300rpx;
+}

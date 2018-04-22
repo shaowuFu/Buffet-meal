@@ -1,0 +1,55 @@
+<!--pages/menu/menu.wxml-->
+<view>
+  <swiper autoplay='true' interval="3000" indicator-dots="true">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src='{{item}}' class='item-image'></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view style='display:flex;'>
+    <view class='menu-left-icon' style='flex:1;backgroud-color:#E0E0E0;height: {{height}}rpx'>
+      <view style='display:flex;flex:6'>
+        <scroll-view scroll-y="true">
+          <view wx:for="{{menus}}" wx:for-item="menu" bindtap='getType' data-type='{{menu.id}}' style='height: 150rpx; background-color: {{menu.id===menuName ? null : color}}'>
+            <view style='text-align:center; width:200rpx;'>
+              <image src='{{menu.iconUrl}}' class='menu-icon'></image>
+            </view>
+            <text class='meun-text'>{{menu.type}}</text>
+          </view>
+        </scroll-view>
+      </view>
+      <view class='menu-scroll' style='flex:1'>
+        <view style='text-align:center;width:200rpx'>
+          <image style='margin-left:-27rpx' src='../../images/icon/card.svg' class='menu-icon' style='margin-left: 50%;transform: translateX(-50%)'></image>
+        </view>
+        <view catchtap='goCard'>
+          <text class='meun-text' style='width:200rpx'>我的卡包</text>
+        </view>
+      </view>
+    </view>
+    <view class='menu-right-icon' style='flex:6;'>
+      <scroll-view scroll-y="true" style='height:{{height}}rpx;' scroll-into-view="{{menuName}}">
+        <view wx:for="{{menus}}" wx:for-item="menu" id='{{menu.id}}'>
+          <view wx:for="{{menu.foods}}" wx:for-item="food" class='food-icon' catchtap='goDetail' data-name='{{food.name}}'>
+            <view style='text-align:left;flex:1'>
+              <image src='{{food.imgUrl}}' class='food-img'></image>
+            </view>
+            <view class='food-right-np'>
+              <view class='food-name'>
+                <text class='meun-text'>{{food.name}}</text>
+              </view>
+              <view class='food-pirce'>
+                <text class='meun-text food-pirce-text'>{{food.price}}</text>
+              </view>
+            </view>
+            <view class='food-line'></view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <view wx:if="{{isCart}}" class='cart' catchtap='goCart'>
+    <image src='../../images/icon/shopping-cart.svg' class='icon-cart'></image>
+  </view>
+</view>
