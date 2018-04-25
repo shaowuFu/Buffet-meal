@@ -89,11 +89,17 @@ Page({
       }
     })
   },
+  /**
+   * 跳转到登录页面
+   */
   register: function () {
     wx.navigateTo({
       url: '../login/login',
     })
   },
+  /**
+   * 如果登录跳转到订单页面，反之提醒请登录
+   */
   goOrder: function (event) {
     if (app.globalData.loginName) {
       wx.navigateTo({
@@ -106,6 +112,9 @@ Page({
       })
     }
   },
+  /**
+   * 如果登录跳转到menu页面，反之提醒请登录
+   */
   goShopping: function (event) {
     if (app.globalData.loginName) {
       wx.navigateTo({
@@ -118,12 +127,18 @@ Page({
       })
     }
   },
+  /**
+   * 前往我的卡包页面
+   */
   goCard: function (event) {
     wx.showToast({
       title: '该功能暂不开放',
       image: '../../images/icon/warn.svg'
     })
   },
+  /**
+   * 退出登录
+   */
   exit: function(event) {
     app.globalData.loginName = '';
     wx.showToast({

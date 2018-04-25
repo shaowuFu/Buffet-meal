@@ -68,11 +68,17 @@ Page({
 
   },
 
+  /**
+   * 是否显示验证码
+   */
   showCode: function () {
     this.setData({
       isCode: true,
     })
   },
+  /**
+   * 判断手机号是否准确
+   */
   getPhone: function (event) {
     let phone = event.detail.value;
     let isPhone = /^1[3|5|7|8|4]\d{9}$/;
@@ -87,6 +93,9 @@ Page({
       })
     }
   },
+  /**
+   * 登录验证
+   */
   loginConfig: function (event) {
     wx.login({
       timeout: 5000,
@@ -114,6 +123,9 @@ Page({
       }
     })
   },
+  /**
+   * 密码验证
+   */
   getPassword: function (event) {
     let isPassword = /^\d{6}$/;
     let password = event.detail.value;

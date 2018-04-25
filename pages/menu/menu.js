@@ -198,11 +198,17 @@ Page({
   onShareAppMessage: function () {
 
   },
+  /**
+   * 获取点击列表的数据
+   */
   getType: function (event) {
     this.setData({
       menuName: event.currentTarget.dataset.type,
     });
   },
+  /**
+   * 前往详情页面
+   */
   goDetail(event) {
     let name = event.currentTarget.dataset.name;
     app.globalData.foodName = name;
@@ -210,11 +216,17 @@ Page({
       url: '../foodDetail/foodDetail',
     })
   },
+  /**
+   * 前往订单页面
+   */
   goCart: function(event) {
     wx.navigateTo({
       url: '../cart/cart',
     })
   },
+  /**
+   * 前往卡包页面
+   */
   goCard: function(event) {
     wx.showToast({
       title: '该功能暂不开放',

@@ -1,4 +1,6 @@
 let city = require('../../utils/city.js');
+let qqMapLib = require('../../utils/qqmap-wx-jssdk.min.js');
+let qqMap;
 let app = getApp();
 Page({
 
@@ -34,6 +36,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // 创建腾讯地图的对象
+    qqMap = new qqMapLib({
+      key: 'SRZBZ-UTNWK-Y3CJ3-ABFR7-WIWVJ-W2BP5'
+    });
     if (app.globalData.loginName) {
       this.setData({
         name: app.globalData.loginName,
@@ -114,6 +120,9 @@ Page({
   onShareAppMessage: function () {
 
   },
+  /**
+   * 点击城市切换列表
+   */
   cityselect: function () {
     this.setData({
       isHidden: false,
@@ -193,6 +202,10 @@ Page({
       startPageY: pageY
     })
   },
+
+  /**
+   * 当点击城市获取所点的城市
+   */
   selectCity: function (event) {
     let city = event.target.dataset.city;
     this.setData({
@@ -200,16 +213,27 @@ Page({
       isHidden: true,
     });
   },
+
+  /**
+   * 前往登录页面
+   */
   goLogin: function (event) {
     wx.navigateTo({
       url: '../login/login',
     })
   },
+  /**
+   * 关闭城市列表的查询
+   */
   closeCity: function (event) {
     this.setData({
       isHidden: true,
     })
   },
+
+  /**
+   * 输入城市名查询 获取焦点事件
+   */
   searchCity: function (event) {
     let citys = [];
     this.data.cityList.forEach(val => {
@@ -236,15 +260,39 @@ Page({
       })
     }
   },
+  // 点击进入菜单进去menu页面
   goMenu: function (event) {
     wx.navigateTo({
       url: '../menu/menu',
     })
   },
   getMap: function () {
+    //获取this
     let that = this;
+    // 获取当前经纬度
     wx.getLocation({
       success: function (res) {
+        qqMap.getCityList({
+          success: function(res) {
+            console.log('list', res);
+          },
+        })
+        qqMap.reverseGeocoder({
+          location: {
+            latitude: res.latitude,
+            longitude: res.longitude
+          },
+          // 根据经度纬度获取当前所在城市信息
+          success: function(res) {
+            that.setData({
+              city: res.result.address_component.city
+            })
+          },
+          fail: function(res) {
+            console.log('err',res);
+          }
+        })
+        // 设置地图的相关属性
         that.setData({
           map: {
             latitude: res.latitude,
@@ -260,7 +308,6 @@ Page({
             }]
           }
         })
-        console.log('data', that.data);
       },
     })
   }

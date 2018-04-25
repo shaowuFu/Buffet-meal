@@ -138,9 +138,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // 动态设置导航栏
     wx.setNavigationBarTitle({
       title: app.globalData.foodName,
     })
+    // 设置menu界面的数据
     this.data.menus.forEach(menu => {
       menu.foods.forEach(food => {
         if (food.name === app.globalData.foodName) {
@@ -203,6 +205,7 @@ Page({
   onShareAppMessage: function () {
 
   },
+  // 添加订单
   addPrice: function (event) {
     let number = this.data.food.number;
     let price = +this.data.price.split('￥')[1];

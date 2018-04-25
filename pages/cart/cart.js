@@ -14,6 +14,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // 获取所有订单的价格
     let allPrice = 0;
     app.globalData.orders.forEach(order => {
       allPrice += (+order.price);
@@ -72,7 +73,9 @@ Page({
   onShareAppMessage: function () {
   
   },
-
+  /**
+   * 提交订单
+   */
   commitOrder: function(event) {
     wx.requestPayment({
       timeStamp: 'new Date().getTime()',
