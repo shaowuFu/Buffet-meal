@@ -86,10 +86,11 @@
 }
 
 .go-menu-button {
+  position: absolute;
   background-color: #A52A2A;
   width: 100%;
   color: white;
-  margin-top: 80%;
+  margin-top: 14%;
 }
 
 .map {

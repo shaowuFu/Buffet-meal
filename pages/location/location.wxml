@@ -3,7 +3,7 @@
     <button class='button-city' bindtap='cityselect'>{{city}}</button>
     <view class='search-restaurant'>
       <image src='../../images/icon/search.svg' style='width: 50rpx;height: 50rpx;'></image>
-      <input type='text' confirm-type='search' placeholder="搜索餐厅" placeholder-class="input-placeholder" style='font-size: 24rpx;' />
+      <input type='text' confirm-type='search' placeholder="搜索餐厅" placeholder-class="input-placeholder" style='font-size: 24rpx;' bindconfirm='searchRestaurant' />
     </view>
   </view>
   <view wx:if="{{isLogin}}">
@@ -21,6 +21,13 @@
   <view style='height: 30rpx; background-color: #F8F8F8'></view>
   <view>
     <map class='map' longitude='{{map.longitude}}' latitude='{{map.latitude}}' markers='{{map.markers}}'></map>
+    <view style='margin: 60rpx'>
+      <scroll-view scroll-y="true" style='height: 380rpx'>
+        <view wx:for="{{addres}}" wx:for-item="address" catchtap='selectRestaurant' data-restaurant='{{address}}'>
+          <text style='font-size: 26rpx;'>{{address}}</text>
+        </view>
+      </scroll-view>
+    </view>
   </view>
   <view>
     <button class='go-menu-button' catchtap='goMenu'>进入菜单</button>

@@ -29,7 +29,8 @@ Page({
       polyline: [],
       circles: [],
       controls: [],
-    }
+    },
+    addres: [],
   },
 
   /**
@@ -204,7 +205,7 @@ Page({
   },
 
   /**
-   * 当点击城市获取所点的城市
+   * 当点击城市获取所点击的城市
    */
   selectCity: function (event) {
     let city = event.target.dataset.city;
@@ -212,6 +213,20 @@ Page({
       city: city,
       isHidden: true,
     });
+    qqMap.geocoder({
+      address: this.data.city,
+      success: function(res) {
+        this.setData({
+          map: {
+            longitude: res.result.location.lng,
+            latitude: res.result.location.lat,
+          }
+        });
+      },
+      fail: function(res) {
+        console.log('err', res);
+      }
+    })
   },
 
   /**
@@ -272,11 +287,6 @@ Page({
     // 获取当前经纬度
     wx.getLocation({
       success: function (res) {
-        qqMap.getCityList({
-          success: function(res) {
-            console.log('list', res);
-          },
-        })
         qqMap.reverseGeocoder({
           location: {
             latitude: res.latitude,
@@ -310,5 +320,37 @@ Page({
         })
       },
     })
+  },
+  searchRestaurant: function(event) {
+    let that = this;
+    if(event.detail.value) {
+      qqMap.search({
+        keyword: event.detail.value,
+        location: {
+          latitude: this.data.map.latitude,
+          longitude: this.data.map.longitude
+        },
+        page_size: 20,
+        success: function(res) {
+          let addres = [];
+          res.data.forEach(val => {
+            addres.push(val.address);
+          });
+          that.setData({
+            addres: addres,
+          })
+        },
+        fail: function(err) {
+          console.log('err', err);
+        }
+      })
+    }
+  },
+  selectRestaurant: function(event) {
+    if (event.currentTarget.dataset.restaurant) {
+      wx.navigateTo({
+        url: '../menu/menu',
+      })
+    }
   }
 })
