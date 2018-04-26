@@ -84,14 +84,59 @@ Page({
       signType: 'MD5',
       paySign: '',
       success: function(res) {
-        console.log('支付成功');
+        wx.showToast({
+          title: '支付成功',
+        })
       },
       fail: function(err) {
-        console.log('支付失败');
+        wx.showToast({
+          title: '支付失败',
+        });
       },
       complete: function() {
-        console.log('交易完成');
+        wx.showToast({
+          title: '交易完成',
+        });
       }
+    })
+  },
+  add: function (event) {
+    let addOrder = event.currentTarget.dataset.order;
+    let allPrice = 0;
+    this.data.orders.forEach(order => {
+      if(order.name === addOrder.name) {
+        order.number += 1;
+        order.price = ((+(order.unitPrice)) * order.number).toFixed(2);
+      }
+    });
+    app.globalData.orders = this.data.orders;
+    this.data.orders.forEach(order => {
+      allPrice += (+order.price);
+    });
+    this.setData({
+      orders: this.data.orders,
+      allPrice: allPrice.toFixed(2)
+    })
+  },
+  remove:  function (event) {
+    let addOrder = event.currentTarget.dataset.order;
+    let allPrice = 0;
+    this.data.orders.forEach((order,index) => {
+      if (order.name === addOrder.name) {
+        order.number -= 1;
+        if(order.number === 0) {
+          let data = this.data.orders.splice(index,1);
+        }
+        order.price = ((+(order.unitPrice)) * order.number).toFixed(2);
+      }
+    });
+    app.globalData.orders = this.data.orders;
+    this.data.orders.forEach(order => {
+      allPrice += (+order.price);
+    });
+    this.setData({
+      orders: this.data.orders,
+      allPrice: allPrice.toFixed(2)
     })
   }
 })

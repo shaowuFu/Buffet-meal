@@ -214,6 +214,7 @@ Page({
         name: this.data.name,
         price: price,
         number: number,
+        unitPrice: price
       }
     });
     if (app.globalData.orders.length > 0) {

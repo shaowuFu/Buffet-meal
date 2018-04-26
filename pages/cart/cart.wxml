@@ -14,10 +14,10 @@
   </view>
   <view class='order-icon'>
     <view class='order-remove'>
-      <image src='../../images/icon/remove.svg' class='order-size'></image>
+      <image src='../../images/icon/remove.svg' data-order='{{order}}' class='order-size' catchtap='remove'></image>
     </view>
     <view class=' order-add'>
-      <image src='../../images/icon/add.svg' class='order-size'></image>
+      <image src='../../images/icon/add.svg' class='order-size' data-order='{{order}}' catchtap='add'></image>
     </view>
   </view>
 </view>

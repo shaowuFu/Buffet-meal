@@ -208,23 +208,24 @@ Page({
    * 当点击城市获取所点击的城市
    */
   selectCity: function (event) {
+    let that = this;
     let city = event.target.dataset.city;
-    this.setData({
+    that.setData({
       city: city,
       isHidden: true,
     });
     qqMap.geocoder({
       address: this.data.city,
       success: function(res) {
-        this.setData({
+        that.setData({
           map: {
             longitude: res.result.location.lng,
             latitude: res.result.location.lat,
           }
         });
       },
-      fail: function(res) {
-        console.log('err', res);
+      fail: function(err) {
+        console.log('err', err);
       }
     })
   },
