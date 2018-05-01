@@ -39,7 +39,7 @@ Page({
   onLoad: function (options) {
     // 创建腾讯地图的对象
     qqMap = new qqMapLib({
-      key: 'SRZBZ-UTNWK-Y3CJ3-ABFR7-WIWVJ-W2BP5'
+      key: 'key值'
     });
     if (app.globalData.loginName) {
       this.setData({
