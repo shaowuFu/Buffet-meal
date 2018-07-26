@@ -1,4 +1,5 @@
 let city = require('../../utils/city.js');
+let text = require('../../utils/parsingText.js');
 let qqMapLib = require('../../utils/qqmap-wx-jssdk.min.js');
 let qqMap;
 let app = getApp();
@@ -36,11 +37,161 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     // 创建腾讯地图的对象
     qqMap = new qqMapLib({
-      key: 'key值'
+      key: 'SRZBZ-UTNWK-Y3CJ3-ABFR7-WIWVJ-W2BP5'
     });
+    qqMap.getCityList({
+      success: function(response) {
+        let A = [];
+        let B = [];
+        let C = [];
+        let D = [];
+        let E = [];
+        let F = [];
+        let G = [];
+        let H = [];
+        let I = [];
+        let J = [];
+        let K = [];
+        let L = [];
+        let M = [];
+        let N = [];
+        let O = [];
+        let P = [];
+        let Q = [];
+        let R = [];
+        let S = [];
+        let T = [];
+        let U = [];
+        let V = [];
+        let W = [];
+        let X = [];
+        let Y = [];
+        let Z = [];
+        let all = [];
+        let initials = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+        initials.forEach(val => {
+          let arr = [];
+          response.result[2].forEach(v => {
+            if (text.getFirstPinYinFirstCharacter(v.fullname) === val) {
+              v.initial = val;
+              arr.push(v);
+            }
+          })
+          all.push(arr);
+        })
+        console.log('a', all);
+        // response.result[2].forEach(v => {
+        //   if (text.getFirstPinYinFirstCharacter(v.fullname) === 'a') {
+        //     v.initial = 'A';
+        //     A.push(v);
+        //   }
+        //   if (text.getFirstPinYinFirstCharacter(v.fullname) === 'b') {
+        //     v.initial = 'B';
+        //     B.push(v);
+        //   }
+        //   if (text.getFirstPinYinFirstCharacter(v.fullname) === 'c') {
+        //     v.initial = 'C';
+        //     C.push(v);
+        //   }
+        //   if (text.getFirstPinYinFirstCharacter(v.fullname) === 'd') {
+        //     v.initial = 'D';
+        //     D.push(v);
+        //   }
+        //   if (text.getFirstPinYinFirstCharacter(v.fullname) === 'e') {
+        //     v.initial = 'E';
+        //     E.push(v);
+        //   }
+        //   if (text.getFirstPinYinFirstCharacter(v.fullname) === 'f') {
+        //     v.initial = 'F';
+        //     F.push(v);
+        //   }
+        //   if (text.getFirstPinYinFirstCharacter(v.fullname) === 'g') {
+        //     v.initial = 'G';
+        //     G.push(v);
+        //   }
+        //   if (text.getFirstPinYinFirstCharacter(v.fullname) === 'h') {
+        //     v.initial = 'H';
+        //     H.push(v);
+        //   }
+        //   if (text.getFirstPinYinFirstCharacter(v.fullname) === 'i') {
+        //     v.initial = 'I';
+        //     I.push(v);
+        //   }
+        //   if (text.getFirstPinYinFirstCharacter(v.fullname) === 'j') {
+        //     v.initial = 'J';
+        //     J.push(v);
+        //   }
+        //   if (text.getFirstPinYinFirstCharacter(v.fullname) === 'k') {
+        //     v.initial = 'K';
+        //     K.push(v);
+        //   }
+        //   if (text.getFirstPinYinFirstCharacter(v.fullname) === 'l') {
+        //     v.initial = 'L';
+        //     L.push(v);
+        //   }
+        //   if (text.getFirstPinYinFirstCharacter(v.fullname) === 'm') {
+        //     v.initial = 'M';
+        //     M.push(v);
+        //   }
+        //   if (text.getFirstPinYinFirstCharacter(v.fullname) === 'n') {
+        //     v.initial = 'N';
+        //     N.push(v);
+        //   }
+        //   if (text.getFirstPinYinFirstCharacter(v.fullname) === 'o') {
+        //     v.initial = 'O';
+        //     O.push(v);
+        //   }
+        //   if (text.getFirstPinYinFirstCharacter(v.fullname) === 'p') {
+        //     v.initial = 'P';
+        //     P.push(v);
+        //   }
+        //   if (text.getFirstPinYinFirstCharacter(v.fullname) === 'q') {
+        //     v.initial = 'Q';
+        //     Q.push(v);
+        //   }
+        //   if (text.getFirstPinYinFirstCharacter(v.fullname) === 'r') {
+        //     v.initial = 'R';
+        //     R.push(v);
+        //   }
+        //   if (text.getFirstPinYinFirstCharacter(v.fullname) === 's') {
+        //     v.initial = 'S';
+        //     S.push(v);
+        //   }
+        //   if (text.getFirstPinYinFirstCharacter(v.fullname) === 't') {
+        //     v.initial = 'T';
+        //     T.push(v);
+        //   }
+        //   if (text.getFirstPinYinFirstCharacter(v.fullname) === 'u') {
+        //     v.initial = 'U';
+        //     U.push(v);
+        //   }
+        //   if (text.getFirstPinYinFirstCharacter(v.fullname) === 'v') {
+        //     v.initial = 'V';
+        //     V.push(v);
+        //   }
+        //   if (text.getFirstPinYinFirstCharacter(v.fullname) === 'w') {
+        //     v.initial = 'W';
+        //     W.push(v);
+        //   }
+        //   if (text.getFirstPinYinFirstCharacter(v.fullname) === 'x') {
+        //     v.initial = 'X';
+        //     X.push(v);
+        //   }
+        //   if (text.getFirstPinYinFirstCharacter(v.fullname) === 'y') {
+        //     v.initial = 'Y';
+        //     Y.push(v);
+        //   }
+        //   if (text.getFirstPinYinFirstCharacter(v.fullname) === 'z') {
+        //     v.initial = 'Z';
+        //     Z.push(v);
+        //   }
+        // });
+        // all.push(A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z);
+      }
+    })
     if (app.globalData.loginName) {
       this.setData({
         name: app.globalData.loginName,
@@ -49,10 +200,10 @@ Page({
     }
     let cityArr = ['上海', '北京', '郑州'];
     this.setData({
-      cityArr: cityArr   //设置热门城市
+      cityArr: cityArr //设置热门城市
     });
-    let searchLetter = city.searchLetter;  //城市字母列表
-    let cityList = city.cityList();       //城市列表
+    let searchLetter = city.searchLetter; //城市字母列表
+    let cityList = city.cityList(); //城市列表
     let sysInfo = wx.getSystemInfoSync(); //获取系统信息同步接口
     let winHeight = sysInfo.windowHeight; //可使用窗口高度
     let itemH = (winHeight - 100) / searchLetter.length;
@@ -63,7 +214,7 @@ Page({
       temp.tHeight = i * itemH;
       temp.bHeight = (i + 1) * itemH;
       tempObj.push(temp);
-    }
+    };
     this.setData({
       winHeight: winHeight - 120,
       itemH: itemH,
@@ -76,60 +227,60 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   },
   /**
    * 点击城市切换列表
    */
-  cityselect: function () {
+  cityselect: function() {
     this.setData({
       isHidden: false,
     })
   },
-  searchLetterStart: function (event) {
+  searchLetterStart: function(event) {
     let showLetter = event.currentTarget.dataset.letter;
     let pageY = event.touches[0].pageY;
     this.setScrollTop(this, showLetter);
@@ -140,7 +291,7 @@ Page({
       isShowLetter: true,
     })
   },
-  searchLetterMove: function (event) {
+  searchLetterMove: function(event) {
     let pageY = event.touches[0].pageY;
     let startPageY = this.data.startPageY;
     let tHeight = this.data.tHeight;
@@ -156,15 +307,15 @@ Page({
       }
     }
   },
-  searchLetterEnd: function (event) {
+  searchLetterEnd: function(event) {
     let that = this;
-    setTimeout(function () {
+    setTimeout(function() {
       that.setData({
         isShowLetter: false
       })
     }, 1000)
   },
-  setScrollTop: function (that, showLetter) {
+  setScrollTop: function(that, showLetter) {
     let scrollTop = 0;
     let cityList = that.data.cityList;
     let cityCount = 0;
@@ -182,7 +333,7 @@ Page({
       scrollTop: scrollTop - 1558
     })
   },
-  nowLetter: function (pageY, that) {
+  nowLetter: function(pageY, that) {
     let letterData = this.data.searchLetter;
     let bHeight = 0;
     let tHeight = 0;
@@ -207,7 +358,7 @@ Page({
   /**
    * 当点击城市获取所点击的城市
    */
-  selectCity: function (event) {
+  selectCity: function(event) {
     let that = this;
     let city = event.target.dataset.city;
     that.setData({
@@ -233,7 +384,7 @@ Page({
   /**
    * 前往登录页面
    */
-  goLogin: function (event) {
+  goLogin: function(event) {
     wx.navigateTo({
       url: '../login/login',
     })
@@ -241,7 +392,7 @@ Page({
   /**
    * 关闭城市列表的查询
    */
-  closeCity: function (event) {
+  closeCity: function(event) {
     this.setData({
       isHidden: true,
     })
@@ -250,7 +401,7 @@ Page({
   /**
    * 输入城市名查询 获取焦点事件
    */
-  searchCity: function (event) {
+  searchCity: function(event) {
     let citys = [];
     this.data.cityList.forEach(val => {
       citys.push(...val.cityInfo);
@@ -277,17 +428,17 @@ Page({
     }
   },
   // 点击进入菜单进去menu页面
-  goMenu: function (event) {
+  goMenu: function(event) {
     wx.navigateTo({
       url: '../menu/menu',
     })
   },
-  getMap: function () {
+  getMap: function() {
     //获取this
     let that = this;
     // 获取当前经纬度
     wx.getLocation({
-      success: function (res) {
+      success: function(res) {
         qqMap.reverseGeocoder({
           location: {
             latitude: res.latitude,
@@ -300,7 +451,7 @@ Page({
             })
           },
           fail: function(res) {
-            console.log('err',res);
+            console.log('err', res);
           }
         })
         // 设置地图的相关属性
@@ -324,7 +475,7 @@ Page({
   },
   searchRestaurant: function(event) {
     let that = this;
-    if(event.detail.value) {
+    if (event.detail.value) {
       qqMap.search({
         keyword: event.detail.value,
         location: {
